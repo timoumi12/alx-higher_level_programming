@@ -3,6 +3,6 @@
 """Defines Rectangle Class"""
 
 
-class Reactangle:
+class Rectangle:
     """an empty class"""
     pass
