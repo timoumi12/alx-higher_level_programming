@@ -7,7 +7,7 @@ class Rectangle:
     """Creates a Rectangle"""
     def __init__(self, width=0, height=0):
         """Instantiation of a new Reactangle
-        
+
         Args:
         width (int): the width of new Rectangle
         height (int): the height of new Rectangle
