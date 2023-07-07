@@ -1,14 +1,14 @@
 #!/usr/bin/python3
 
 """
-    4-print_square function
+    5-text_indentation function
 
     creates a function that adds two integers
 """
 
 
-def print_square(size):
-    """prints a square while checking edge cases"""
+def text_indentation(size):
+    """prints \n after '.', ':' and '?' while checking edge cases"""
 
     if not isinstance(text, str):
         raise TypeError("text must be a string")
