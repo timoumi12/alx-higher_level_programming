@@ -7,7 +7,7 @@
 """
 
 
-def text_indentation(size):
+def text_indentation(text):
     """prints \n after '.', ':' and '?' while checking edge cases"""
 
     if not isinstance(text, str):
