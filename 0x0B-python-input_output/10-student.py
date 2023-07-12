@@ -17,8 +17,8 @@ class Student:
     def to_json(self, attrs=None):
         '''retrieves a dictionary representation of a Student'''
 
-        if isinstance(attrs, list) and
-        all(isinstance(k, str) for k in attrs):
+        if (type(attrs) == list and
+                all(type(ele) == str for ele in attrs)):
             res = {}
             for i in attrs:
                 if hasattr(self, i):
