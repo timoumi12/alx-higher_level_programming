@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""6-load_from_json_file.py"""
+"""7-add_item.py"""
 import sys
 
 
