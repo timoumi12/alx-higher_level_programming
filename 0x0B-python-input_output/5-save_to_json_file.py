@@ -8,4 +8,4 @@ def save_to_json_file(my_obj, filename):
     deserializes an object
     """
     with open(filename, 'w') as f:
-        obj = json.dumps(my_obj, filename)
+        json.dumps(my_obj, f)
