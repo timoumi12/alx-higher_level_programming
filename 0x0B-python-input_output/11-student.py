@@ -1,0 +1,32 @@
+#!/usr/bin/python3
+"""11-student.py"""
+
+
+class Student:
+    """
+    Creates a Student
+    """
+
+    def __init__(self, first_name, last_name, age):
+        '''Instantiation with first_name, last_name and age'''
+
+        self.first_name = first_name
+        self.last_name = last_name
+        self.age = age
+
+    def to_json(self, attrs=None):
+        '''retrieves a dictionary representation of a Student'''
+
+        if (type(attrs) == list and
+                all(type(ele) == str for ele in attrs)):
+            res = {}
+            for i in attrs:
+                if hasattr(self, i):
+                    res[i] = getattr(self, i)
+            return res
+
+        return self.__dict__
+
+    def reload_from_json(self, json):
+        for key, value in json.items():
+            setattr(self, key, value)
