@@ -16,6 +16,11 @@ class TestBase_instances(unittest.TestCase):
         b2 = Base()
         self.assertEqual(b1.id, b2.id - 1)
 
+    def test_None_id(self):
+        b1 = Base(None)
+        b2 = Base(None)
+        self.assertEqual(b1.id, b2.id - 1)
+
     def test_unique_id(self):
         self.assertEqual(12, Base(12).id)
 
