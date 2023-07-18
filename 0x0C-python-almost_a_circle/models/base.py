@@ -23,11 +23,4 @@ class Base:
 
         if list_dictionaries is None or len(list_dictionaries) == 0:
             return "[]"
-        _str = "["
-        if len(list_dictionaries) == 1:
-            _str += json.dumps(list_dictionaries[0]) + "]"
-        else:
-            for i in range(list_dictionaries) - 1:
-                _str += json.dumps(list_dictionaries[i]) + ", "
-            _str += json.dumps(list_dictionaries) + "]"
-        return _str
+        return json.dumps(list_dictionaries)
