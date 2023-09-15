@@ -11,7 +11,7 @@ if __name__ == "__main__":
         passwd=sys.argv[2],
         db=sys.argv[3],
         charset="utf8")
-    stateName=sys.argv[4];
+    stateName = sys.argv[4]
     cur = conn.cursor()
     cur.execute("SELECT * FROM states WHERE name = '{}';".format(stateName))
     data = cur.fetchall()
