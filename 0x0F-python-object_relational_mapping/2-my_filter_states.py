@@ -13,7 +13,8 @@ if __name__ == "__main__":
         charset="utf8")
     stateName = sys.argv[4]
     cur = conn.cursor()
-    cur.execute("SELECT * FROM states WHERE name = BINARY '{}';".format(stateName))
+    cur.execute("SELECT * FROM states WHERE name = BINARY '{}';"
+                .format(stateName))
     data = cur.fetchall()
     for d in data:
         print(d)
