@@ -6,12 +6,16 @@ from sqlalchemy.orm import sessionmaker
 from sqlalchemy import create_engine
 
 if __name__ == "__main__":
-    host="localhost"
-    port=3306
     engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'
                            .format(sys.argv[1],
                                    sys.argv[2],
                                    sys.argv[3]),
                                    pool_pre_ping=True)
+    # create a configured "Session" class
     Session = sessionmaker(bind=engine)
+    # create a Session
     session = Session()
+    # extract all states
+    states = session.query(State).all()
+    for state in states:
+        print("{}: {}".format(state.id, state.name))
