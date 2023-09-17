@@ -15,8 +15,8 @@ if __name__ == "__main__":
     # create a Session
     session = Session()
     # extract all states
-    states = session.query(State).all()
-    if states[0]:
+    states = session.query(State).limit(1).all()
+    if states:
         print("{}: {}".format(states[0].id, states[0].name))
     else:
         print('Nothing')
