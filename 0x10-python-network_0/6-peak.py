@@ -4,22 +4,21 @@
 def find_peak(list_of_integers):
     '''find peak function'''
 
-    _list = list_of_integers
-    _len = len(_list)
-    if _list is None or _len == 0:
+    my_list = list_of_integers
+    if my_list is None or len(my_list) == 0:
         return None
 
-    if _len == 1 or _list[0] >= _list[1]:
-        return _list[0]
+    if len(my_list) == 1 or my_list[0] > my_list[1]:
+        return my_list[0]
 
-    if _len == 2 and _list[-1] >= _list[-2]:
-        return _list[-1]
-
-    for i in range(1, _len - 1):
-        if (_list[i] >= _list[i - 1] and _list[i] >= _list[i + 1]):
-            return _list[i]
-
-    if _list[-1] >= _list[-2]:
-        return _list[-1]
-
-    return None
+    start = 0
+    end = len(my_list) - 1
+    while start < end:
+        mid = start + (end - start) // 2
+        if my_list[mid] > my_list[mid - 1] and my_list[mid] > my_list[mid + 1]:
+            return my_list[mid]
+        if my_list[mid - 1] > my_list[mid + 1]:
+            end = mid
+        else:
+            start = mid + 1
+    return my_list[start]
