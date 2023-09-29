@@ -9,5 +9,4 @@ if __name__ == "__main__":
     url = sys.argv[1]
     email = {'email': sys.argv[2]}
     req = requests.get(url, params=email)
-    req = req.text
-    print(data)
+    print(req.text)
