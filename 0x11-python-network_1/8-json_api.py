@@ -8,12 +8,12 @@ if __name__ == "__main__":
 
     url = "http://0.0.0.0:5000/search_user"
     char = {'q': ""}
-    if sys.argv[1]:
+    if len(sys.argv) >= 2:
         char = {'q': sys.argv[1]}
-    req = requests.get(url, data=char)
+    req = requests.post(url, data=char)
     try:
-        req = req.json
-        if req == {}
+        req = req.json()
+        if req == {}:
             print("No result")
         else:
             print("[{}] {}".format(req.get("id"), req.get("name")))
