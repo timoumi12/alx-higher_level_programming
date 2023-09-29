@@ -2,7 +2,7 @@
 '''a script that fetches https://alx-intranet.hbtn.io/status'''
 
 
-if __name__ = "__main__":
+if __name__ == "__main__":
     import urllib.request
 
 
