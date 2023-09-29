@@ -7,7 +7,7 @@ if __name__ == "__main__":
     import sys
 
     url = sys.argv[1]
-    email = sys.argv[2]
-    req = requests.get(url, email=email)
+    email = {'email': sys.argv[2]}
+    req = requests.get(url, params=email)
     req = req.text
     print(data)
