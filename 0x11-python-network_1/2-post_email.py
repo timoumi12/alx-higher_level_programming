@@ -1,11 +1,13 @@
 #!/usr/bin/python3
 '''a script that fetches https://alx-intranet.hbtn.io/status'''
-import urllib.request
-import urllib.parse
-import sys
 
 
-if __name__ = "__main__":
+
+if __name__ == "__main__":
+    import urllib.request
+    import urllib.parse
+    import sys
+
     url = sys.argv[1]
     value = {"email": sys.argv[2]}
     data = urllib.parse.urlencode(value)
